@@ -25,3 +25,29 @@ public:
             } else {
                 digit_value = number[i] - 'A' + 10;
             }  
+decimal = decimal + (digit_value * pow(frombase, power));
+            power++;
+        }
+        return decimal;
+    }
+
+
+    string fromdecimal(int decimal)
+     {
+        string result;
+        while (decimal > 0) {
+            int remainder = decimal % tobase;
+            char digit;
+            if (remainder < 10) {
+                digit = '0' + remainder;
+            } else {
+                digit = 'A' + remainder - 10;
+            }
+            result = digit + result;
+            decimal = (decimal / tobase);
+        }
+        return result;
+    }
+
+
+    string convert()
