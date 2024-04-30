@@ -51,3 +51,30 @@ decimal = decimal + (digit_value * pow(frombase, power));
 
 
     string convert()
+{
+        int decimal = todecimal();
+        return fromdecimal(decimal);
+    }
+};
+
+int main() {
+    string number;
+    int frombase, tobase;
+    cout<<"*****************************"<<'\n';
+    cout<<"----ALL RADIX CONVERSION-----"<<'\n';
+    cout<<"*****************************"<<'\n';
+    cout<<"Enter the number to convert: ";
+    cin>>number;
+    cout<<"Enter the base of the number: ";
+    cin>>frombase;
+    cout<<"Enter the base to convert to: ";
+    cin>>tobase;
+
+    RadixConverter converter(number, frombase, tobase);
+    string converted_number = converter.convert();
+
+    cout << "Converted number: " << converted_number << endl;
+
+    return 0;
+}
+        
